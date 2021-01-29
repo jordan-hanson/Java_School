@@ -17,7 +17,7 @@ public class HelperFunctionsImpl implements HelperFunctions {
 
         while ((cause != null) && !(cause instanceof ConstraintViolationException || cause instanceof MethodArgumentNotValidException)){
 //            iterates through the next cause in the chain until 1 of 2 violations are found
-            cause.getCause();
+            cause = cause.getCause();
         }
 
         if (cause != null){
@@ -26,7 +26,7 @@ public class HelperFunctionsImpl implements HelperFunctions {
                 ConstraintViolationException ex = (ConstraintViolationException) cause;
 
                 ValidationError newVE = new ValidationError();
-                newVE.setFieldname(ex.getMessage());
+                newVE.setFieldName(ex.getMessage());
                 newVE.setMessage(ex.getConstraintName());
 
                 listVE.add(newVE);
@@ -38,7 +38,7 @@ public class HelperFunctionsImpl implements HelperFunctions {
                 for (FieldError fe: fieldErrors){
                     ValidationError newVE = new ValidationError();
 
-                    newVE.setFieldname(fe.getField());
+                    newVE.setFieldName(fe.getField());
                     newVE.setMessage(fe.getDefaultMessage());
 
                     listVE.add(newVE);

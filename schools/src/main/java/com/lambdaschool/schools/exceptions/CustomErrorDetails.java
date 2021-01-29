@@ -34,7 +34,7 @@ public class CustomErrorDetails extends DefaultErrorAttributes {
         errorDetails.put("developerMessage", "path: " + errorAttributes.get("path"));
 //        make a service Helper Functions and a Model to Hold them Validation Error to use a helper function
 //        on the list of them below.
-        errorDetails.put("errors", helperFunctions.getConstraintViolation(getError(webRequest)));
+        errorDetails.put("errors", helperFunctions.getConstraintViolation(this.getError(webRequest)));
 
         return errorDetails;
     }

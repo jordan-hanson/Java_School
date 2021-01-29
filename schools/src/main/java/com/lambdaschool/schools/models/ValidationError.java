@@ -1,18 +1,18 @@
 package com.lambdaschool.schools.models;
 
 public class ValidationError {
-    private String fieldname;
+    private String fieldName;
     private String message;
 
     public ValidationError() {
     }
 
-    public String getFieldname() {
-        return fieldname;
+    public String getFieldName() {
+        return fieldName;
     }
 
-    public void setFieldname(String fieldname) {
-        this.fieldname = fieldname;
+    public void setFieldName(String fieldName) {
+        this.fieldName = fieldName;
     }
 
     public String getMessage() {
@@ -22,4 +22,9 @@ public class ValidationError {
     public void setMessage(String message) {
         this.message = message;
     }
+//    @Override
+//    public String toString()
+//    {
+//        return "ValidationError{" + "Code='" + Code + '\'' + ", message='" + message + '\'' + '}';
+//    }
 }
